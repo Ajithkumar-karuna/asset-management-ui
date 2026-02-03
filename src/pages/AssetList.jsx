@@ -1,4 +1,4 @@
-// frontend/src/pages/AssetList.js
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { assetService, categoryService } from '../services/api';
@@ -34,7 +34,7 @@ function AssetList() {
         categoryId: filterCategory
       });
       
-      // Filter scrapped assets unless explicitly requested
+      
       const filteredData = filterStatus === 'scrapped' 
         ? response.data.filter(a => a.status === 'scrapped')
         : response.data.filter(a => a.status !== 'scrapped');

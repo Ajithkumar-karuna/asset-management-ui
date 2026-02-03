@@ -1,4 +1,4 @@
-// frontend/src/pages/StockView.js
+
 import React, { useState, useEffect } from 'react';
 import { assetService } from '../services/api';
 import DataTable from 'react-data-table-component';

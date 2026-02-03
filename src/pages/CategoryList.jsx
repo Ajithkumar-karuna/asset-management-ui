@@ -1,4 +1,4 @@
-// frontend/src/pages/CategoryList.js
+
 import React, { useState, useEffect } from 'react';
 import { categoryService } from '../services/api';
 import DataTable from 'react-data-table-component';
@@ -136,7 +136,7 @@ function CategoryList() {
         </div>
       </div>
 
-      {/* Modal */}
+
       {showModal && (
         <div className="modal show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
           <div className="modal-dialog">

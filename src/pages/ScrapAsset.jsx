@@ -1,4 +1,4 @@
-// frontend/src/pages/ScrapAsset.js
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { assetService } from '../services/api';
