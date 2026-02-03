@@ -1,7 +1,8 @@
-
+// frontend/src/pages/EmployeeForm.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { employeeService } from '../services/api';
+import { toast } from 'react-toastify';
 
 function EmployeeForm() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function EmployeeForm() {
       setFormData(response.data);
     } catch (error) {
       console.error('Error fetching employee:', error);
-      alert('Failed to fetch employee details');
+      toast.error('Failed to fetch employee details');
     }
   };
 
@@ -53,13 +54,16 @@ function EmployeeForm() {
     try {
       if (isEdit) {
         await employeeService.update(id, formData);
+        toast.success('Employee updated successfully!');
       } else {
         await employeeService.create(formData);
+        toast.success('Employee created successfully!');
       }
       navigate('/employees');
     } catch (error) {
       console.error('Error saving employee:', error);
-      alert('Failed to save employee');
+      const errorMessage = error.response?.data?.message || 'Failed to save employee';
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
